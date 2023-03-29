@@ -1,0 +1,38 @@
+{
+  "version": "0.1",
+  "update_url": "https://github.com/shahverd/tab_for_googletasks",
+  "homepage_url": "https://github.com/shahverd/tab_for_googletasks",
+  "name": "__MSG_ext_name__",
+  "description": "__MSG_ext_description__",
+  "author": "Mostafa Shahverdy",
+  "manifest_version": 3,
+  "default_locale": "en",
+  "permissions":[],
+  "host_permissions": [
+    "https://tasks.google.com/*/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://tasks.google.com/embed/list/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css":[
+      	"content.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "128": "tasks128.png"
+    }
+  },
+  "icons":{
+    "128":"tasks128.png"
+  }
+}
